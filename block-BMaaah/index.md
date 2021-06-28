@@ -176,9 +176,9 @@ db.users.insertMany([
 
 Insert above data into database to perform below queries:-
 
-- Find all males who play cricket. //db.users.find({sports: 'cricket'}).pretty()
+- Find all males who play cricket. //db.users.find({sports: 'cricket', gender: 'Male'}).pretty()
 
 - Update user with extra golf field in sports array whose name is "Steve Ortega". //db.users.update({name: 'Steve Ortega'}, {$push: {sports: 'golf'}})
 - Find all users who play either 'football' or 'cricket'. //db.users.find({sports: {$in: ['football', 'cricket']}}).pretty()
 
-- Find all users whose name includes 'ri' in their name. //db.users.find({'name': {$regex: 'ri'}}).pretty()
+- Find all users whose name includes 'ri' in their name. //db.users.find({name: /ri/i).pretty()
